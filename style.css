@@ -14,11 +14,10 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    /*grid-template-rows: repeat(16, 1fr);
-    grid-template-columns: repeat(16, 1fr);*/
 }
 
 .grid-item {
     border: solid black;
     padding: 16px;
 }
+
