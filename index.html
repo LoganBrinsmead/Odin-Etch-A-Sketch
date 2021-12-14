@@ -8,11 +8,15 @@
     </head>
     <body>
         <h1>Etch-a-Sketch!</h1>
-        <button id="reset-button">Reset</button>
-        <button id="black-btn">Black</button>
-        <button id='select-color-btn'>Pick a Color</button>
-        <button id="rainbow-button">Random Colors</button>
-        <div id="flex-container">
+        <div class="top">
+            <button id="reset-button">Reset</button>
+            <button id="black-btn">Black</button>
+            <div class= "color-picker">
+                <button id='select-color-btn' class="select-color">Pick a Color<input type="color" id="color"></button>    
+            </div>
+            <button id="rainbow-button">Random Colors</button>
+        </div>
+        <div class="flex-container">
             <div class="grid-container" id="grid"></div>
         </div>
     </body>
