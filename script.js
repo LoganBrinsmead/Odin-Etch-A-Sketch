@@ -5,6 +5,7 @@ const selectButton = document.querySelector('#select-color-btn');
 const colorPicker = document.querySelector('#color');
 const rainbowButton = document.querySelector('#rainbow-button');
 const resetButton = document.querySelector('#reset-button');
+const grayscaleButton = document.querySelector('#grayscale-button');
 
 // create a selector for the div element to contain the grid squares
 const gridContainer = document.querySelector('.grid-container');
@@ -58,13 +59,22 @@ function makeGrid() {
             });      
         });
 
-
-        /*selectButton.addEventListener('click', () => {
-            colorPicker.addEventListener('input', () => {
-                change = function() {let colorChoice = colorPicker.value; return grid.style.setBackgroundColor = colorChoice;}
-                grid.onmmouseover = change();
+        // when the select color button is clicked, turn on the color picker and make the background its style
+        selectButton.addEventListener('click', () => {
+            colorPicker.removeAttribute('disabled');
+            grid.addEventListener('mouseover', () => {
+                grid.style.backgroundColor = colorPicker.value;
             });
-        });    */    
+        });
+
+        grayscaleButton.addEventListener('click', () => {
+            let gray = 249;
+            grid.addEventListener('mouseover', () => {
+                let rgbGray = "rgb(" + gray + ',' + gray + ',' + gray  + ")";
+                gray = gray - 13;
+                grid.style.backgroundColor = rgbGray;
+            });
+        });
 
         rainbowButton.addEventListener('click', () => {
             grid.addEventListener('mouseover', () => {
