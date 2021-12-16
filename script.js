@@ -29,7 +29,19 @@ function makeGrid() {
     }
 
     // prompt the user to ask how many cells they would like and store it in a variable
-    let cells = prompt("How many squares would you like on each side?");
+    let cells = prompt("How many squares would you like on each side? Please keep it at 100 or less!");
+
+    // make sure the user keeps the cells at 100 or under 100
+    if (cells > 100) {
+        while (true) {
+            let cells = prompt("Oops! Your input was more than 100! Please keep your input to 100 or less!");
+            if (cells > 100) {
+                continue;
+            } else if (cells <= 100) {
+                break;
+            }
+        }
+    }
 
     gridContainer.setAttribute('id', 'grid');
 
