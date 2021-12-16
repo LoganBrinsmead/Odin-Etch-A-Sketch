@@ -1,5 +1,5 @@
 html {
-    background-color: lightslategray;
+    background-color: lightblue;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -7,9 +7,7 @@ h1, h2 {
     text-align: center;
     font-style: italic;
     font-weight: bold;
-    color: red;
-
-    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+    text-shadow: 0 0 3px #b00efc, 0 0 5px #7db5ff;
 }
 
 .items {
@@ -20,16 +18,15 @@ h1, h2 {
     gap: 12px;
 }
 
-
-
 .left-side {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-    background-image: linear-gradient(white, lightslategray);
-
+    border-radius: 15px;
+    gap: 16px;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+    padding: 32px;
 }
 
 .color-picker {
@@ -39,8 +36,12 @@ h1, h2 {
 
 button {
     border-radius: 15px;
-    color: black;
-    background-color: yellow;
+    color: orange;
+    background-color: rgb(153, 49, 153);
+    padding: 12px;
+    font-weight: bold;
+    font-style: italic; 
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 }
 
 #flex-container {
@@ -48,24 +49,21 @@ button {
     justify-content: right;
 }
 
-/* styles for the grid container */
 .grid-container {
-    border: solid black;
-
+    border: solid lightcoral;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+    border-radius: 15px;
     display: grid;
     justify-content: center;
-
     margin: 0 auto;
     width: 960px;
     height: 700px;
     overflow: hidden;
 }
 
-/* styles for each individual generated box */
 .grid-item {
     padding: 5px;
     background-color: white;
-
     min-height: 0;
     min-width: 0;
     max-width: 960px;
@@ -73,3 +71,18 @@ button {
     overflow: hidden;
 }
 
+footer {
+    position: fixed;
+    height: 25px;
+    padding: 8px;
+    background-color: rgb(153, 49, 153);
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 24px;
+    color: orange;
+}

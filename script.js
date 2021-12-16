@@ -6,20 +6,20 @@ const colorPicker = document.querySelector('#color');
 const rainbowButton = document.querySelector('#rainbow-button');
 const resetButton = document.querySelector('#reset-button');
 const grayscaleButton = document.querySelector('#grayscale-button');
+const eraserButton = document.querySelector('#eraser-button');
 
 // create a selector for the div element to contain the grid squares
 const gridContainer = document.querySelector('.grid-container');
 
-
-
+// function to create a random color
 function getRandomColor() {
-    let x = Math.floor(Math.random() * 256);
-    let y = Math.floor(Math.random() * 256);
-    let z = Math.floor(Math.random() * 256);
-    let color = "rgb(" + x + "," + y + "," + z + ")";
-    return color;
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+      return color;
 }
-
 
 function makeGrid() {
 
@@ -34,7 +34,7 @@ function makeGrid() {
     // make sure the user keeps the cells at 100 or under 100
     if (cells > 100) {
         while (true) {
-            let cells = prompt("Oops! Your input was more than 100! Please keep your input to 100 or less!");
+            cells = prompt("Oops! Your input was more than 100! Please keep your input to 100 or less!");
             if (cells > 100) {
                 continue;
             } else if (cells <= 100) {
@@ -43,6 +43,7 @@ function makeGrid() {
         }
     }
 
+    // give the grid the #grid id
     gridContainer.setAttribute('id', 'grid');
 
     // set number of columns and rows dynamically
@@ -94,9 +95,13 @@ function makeGrid() {
             });    
         });
 
+        eraserButton.addEventListener('click', () => {
+            grid.addEventListener('mouseover', () => {
+                grid.style.backgroundColor = 'White';
+            });
+        });
 
     }
-
 }
 
 
